@@ -36,7 +36,16 @@
     /* SECTIONS */
     section{padding:5rem 2rem;max-width:1200px;margin:auto;position:relative;z-index:1;}
     h2{text-align:center;margin-bottom:1rem;font-size:2.8rem;letter-spacing:1px;}
-    .section-line { width: 80px; height: 3px; background: #00ffff; border: none; margin: 1rem auto 2rem auto; border-radius: 2px; }
+
+    /* SECTION LINES */
+    .section-line {
+      width: 80px;
+      height: 3px;
+      background: #00ffff;
+      border: none;
+      margin: 1rem auto 2rem auto;
+      border-radius: 2px;
+    }
     section p {margin: 1.5rem auto 3rem auto;text-align:center;}
 
     /* CARDS */
@@ -49,9 +58,23 @@
     /* TEAM */
     .team{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;}
     .member{position:relative;text-align:center;}
-    .member img{display:block;margin:0 auto 1rem auto;width:140px;height:140px;object-fit:cover;border-radius:50%;}
+    .member img{
+      display:block;
+      margin:0 auto 1rem auto;
+      width:140px;
+      height:140px;
+      object-fit:cover;
+      border-radius:50%;
+    }
+    .member p:last-child {
+      margin-top: 0.2rem;
+      margin-bottom: 0;
+      color:#888;
+      font-size:rem;
+    }
 
     /* CONTACT */
+    #contact { padding-top:3rem; padding-bottom:3rem; }
     .contact form{display:flex;flex-direction:column;max-width:500px;margin:auto;}
     .contact input,.contact textarea{margin:0.5rem 0;padding:1rem;border-radius:10px;border:none;background:rgba(255,255,255,0.08);color:#fff;}
     .contact input:focus,.contact textarea:focus{outline:2px solid #555;}
@@ -62,7 +85,10 @@
     footer{text-align:center;padding:2rem;background:#121212;color:#888;font-size:0.9rem;}
 
     /* RESPONSIVE */
-    @media(max-width:768px){.cards{flex-direction:column;align-items:center;}.team{flex-direction:column;}}
+    @media(max-width:768px){
+      .cards{flex-direction:column;align-items:center;}
+      .team{flex-direction:column;}
+    }
   </style>
 </head>
 <body>
@@ -113,7 +139,7 @@
       <img src="afeef.png" alt="Founder">
       <h3>Afeef</h3>
       <p>Founder & CEO</p>
-      <p style="color:#888;font-size:2rem;margin-top:5px;">More team members coming soon...</p>
+      <p>More team members coming soon…</p>
     </div>
   </div>
 </section>
@@ -122,10 +148,11 @@
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <hr class="section-line">
-  <form id="contact-form">
-    <input type="text" placeholder="Full Name" required>
-    <input type="email" placeholder="Email Address" required>
-    <textarea rows="5" placeholder="Your Message" required></textarea>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message</button>
   </form>
 </section>
@@ -144,7 +171,7 @@ document.getElementById('invest-btn').addEventListener('click', function(){
   document.getElementById('contact').scrollIntoView({behavior:'smooth'});
 });
 
-// THREE.JS PARTICLE TUNNEL
+// THREE.JS AI DATA TUNNEL
 const canvas = document.getElementById('hero-bg');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
@@ -152,6 +179,7 @@ camera.position.z = 50;
 const renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 
+// particles
 const particleCount = 300;
 const geometry = new THREE.BufferGeometry();
 const positions = [];
@@ -177,45 +205,38 @@ function animate(){
 }
 animate();
 
-window.addEventListener('resize',()=>{camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();renderer.setSize(window.innerWidth, window.innerHeight);});
+window.addEventListener('resize',()=>{
+  camera.aspect=window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
 
-// CONTACT FORM
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById('contact-form');
+// CONTACT FORM JS
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+  e.preventDefault();
 
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target).entries());
 
-    const data = {
-      name: form[0].value,
-      email: form[1].value,
-      message: form[2].value
-    };
+  try {
+    const res = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    });
 
-    try {
-      const response = await fetch("https://nexvian-3.onrender.com/contact", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(data)
-      });
-
-      if(response.ok){
-        alert("Message sent successfully! ✅");
-        form.reset();
-      } else {
-        const errData = await response.json();
-        alert("Error: " + (errData.error || "Try again later"));
-      }
-    } catch(err){
-      alert("Error sending message. Check console.");
-      console.error(err);
-    }
-  });
+    const result = await res.json();
+    alert(result.msg);
+    e.target.reset();
+  } catch(err) {
+    console.error(err);
+    alert("Error sending message. Try again later.");
+  }
 });
 </script>
 
 </body>
 </html>
+
 
 
 
