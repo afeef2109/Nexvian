@@ -1,86 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexvian – AI & Defense Innovation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexvian – AI & Defense Innovation</title>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- SEO Meta -->
+  <meta name="description" content="Nexvian is a global AI & Defense innovation company building scalable infrastructure, intelligent solutions, and next-gen technologies for enterprises and governments.">
+  <meta name="keywords" content="Nexvian, AI infrastructure, defense technology, artificial intelligence, cloud computing, data security, DevOps, innovation">
+  <meta name="author" content="Nexvian">
 
-<!-- Three.js -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#0a0a0a;color:#f0f0f0;overflow-x:hidden;scroll-behavior:smooth;}
-a{text-decoration:none;color:inherit;}
-button{cursor:pointer;transition:0.3s;}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-/* HERO */
-header{position:relative;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;}
-.hero-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
-header h1{font-size:4rem;z-index:1;position:relative;letter-spacing:2px;}
-header p{font-size:1.4rem;z-index:1;position:relative;color:#bbb;margin:1rem 0 2rem;}
-header button{background:#1f1f1f;border:1px solid #444;padding:0.8rem 1.5rem;margin:0 0.5rem;font-weight:600;border-radius:12px;color:#fff;z-index:1;position:relative;}
-header button:hover{background:#333;border-color:#666;}
+  <!-- Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
 
-/* SECTIONS */
-section{padding:5rem 2rem;max-width:1200px;margin:auto;position:relative;z-index:1;}
-h2{text-align:center;margin-bottom:1rem;font-size:2.8rem;letter-spacing:1px;}
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+    body{background:#0a0a0a;color:#f0f0f0;overflow-x:hidden;scroll-behavior:smooth;}
+    a{text-decoration:none;color:inherit;}
+    button{cursor:pointer;transition:0.3s;}
 
-/* SECTION LINES */
-.section-line {
-  width: 80px;
-  height: 3px;
-  background: #00ffff;
-  border: none;
-  margin: 1rem auto 2rem auto;
-  border-radius: 2px;
-}
+    /* HERO */
+    header{position:relative;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;}
+    .hero-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+    header h1{font-size:4rem;z-index:1;position:relative;letter-spacing:2px;}
+    header p{font-size:1.4rem;z-index:1;position:relative;color:#bbb;margin:1rem 0 2rem;}
+    header button{background:#1f1f1f;border:1px solid #444;padding:0.8rem 1.5rem;margin:0 0.5rem;font-weight:600;border-radius:12px;color:#fff;z-index:1;position:relative;}
+    header button:hover{background:#333;border-color:#666;}
 
-/* Paragraph spacing under line */
-section p {margin: 1.5rem auto 3rem auto;}
+    /* SECTIONS */
+    section{padding:5rem 2rem;max-width:1200px;margin:auto;position:relative;z-index:1;}
+    h2{text-align:center;margin-bottom:1rem;font-size:2.8rem;letter-spacing:1px;}
 
-/* CARDS */
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:2rem;
-    margin-top:2rem;
-}
-.cards .glass{flex:1 1 280px;background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);border-radius:15px;padding:2rem;border:1px solid rgba(255,255,255,0.15);transition:0.3s;text-align:center;}
-.cards .glass:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.6);}
-.cards .glass h3{font-size:1.5rem;margin-bottom:0.5rem;}
-.cards .glass p{color:#ccc;font-size:0.95rem;}
+    /* SECTION LINES */
+    .section-line {
+      width: 80px;
+      height: 3px;
+      background: #00ffff;
+      border: none;
+      margin: 1rem auto 2rem auto;
+      border-radius: 2px;
+    }
+    section p {margin: 1.5rem auto 3rem auto;text-align:center;}
 
-/* TEAM */
-.team{display:flex;flex-wrap:wrap;justify-content:center;gap:rem;}
-.member{position:relative;text-align:center;}
-.member img{
-    display: block;
-    margin:0 auto 1rem auto;
-    width:120px !important;
-    height:120px !important;
-    object-fit: cover;    /* fills circle without distortion */
-    border-radius: 90%;   /* circle shape */
-    max-width:none !important;
-}
+    /* CARDS */
+    .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2rem;}
+    .cards .glass{flex:1 1 280px;background:rgba(255,255,255,0.05);backdrop-filter:blur(12px);border-radius:15px;padding:2rem;border:1px solid rgba(255,255,255,0.15);transition:0.3s;text-align:center;}
+    .cards .glass:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.6);}
+    .cards .glass h3{font-size:1.5rem;margin-bottom:0.5rem;}
+    .cards .glass p{color:#ccc;font-size:0.95rem;}
 
-/* CONTACT */
-.contact form{display:flex;flex-direction:column;max-width:500px;margin:auto;}
-.contact input,.contact textarea{margin:0.5rem 0;padding:1rem;border-radius:10px;border:none;background:rgba(255,255,255,0.08);color:#fff;}
-.contact input:focus,.contact textarea:focus{outline:2px solid #555;}
-.contact button{background:#1f1f1f;color:#fff;padding:1rem;border-radius:12px;border:1px solid #444;font-weight:600;margin-top:1rem;}
-.contact button:hover{background:#333;border-color:#666;}
+    /* TEAM */
+    .team{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;}
+    .member{position:relative;text-align:center;}
+    .member img{
+      display:block;
+      margin:0 auto 1rem auto;
+      width:140px;
+      height:140px;
+      object-fit:cover;
+      border-radius:50%;
+    }
+    .member p:last-child {
+      margin-top: 0.2rem;
+      margin-bottom: 0;
+      color:#888;
+      font-size:2rem;
+    }
 
-/* FOOTER */
-footer{text-align:center;padding:2rem;background:#121212;color:#888;font-size:0.9rem;}
+    /* CONTACT */
+    #contact { padding-top:3rem; padding-bottom:3rem; }
+    .contact form{display:flex;flex-direction:column;max-width:500px;margin:auto;}
+    .contact input,.contact textarea{margin:0.5rem 0;padding:1rem;border-radius:10px;border:none;background:rgba(255,255,255,0.08);color:#fff;}
+    .contact input:focus,.contact textarea:focus{outline:2px solid #555;}
+    .contact button{background:#1f1f1f;color:#fff;padding:1rem;border-radius:12px;border:1px solid #444;font-weight:600;margin-top:1rem;}
+    .contact button:hover{background:#333;border-color:#666;}
 
-/* RESPONSIVE */
-@media(max-width:768px){.cards{flex-direction:column;align-items:center;}.team{flex-direction:column;}}
-</style>
+    /* FOOTER */
+    footer{text-align:center;padding:2rem;background:#121212;color:#888;font-size:0.9rem;}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .cards{flex-direction:column;align-items:center;}
+      .team{flex-direction:column;}
+    }
+  </style>
 </head>
 <body>
 
@@ -130,18 +139,20 @@ footer{text-align:center;padding:2rem;background:#121212;color:#888;font-size:0.
       <img src="afeef.png" alt="Founder">
       <h3>Afeef</h3>
       <p>Founder & CEO</p>
+      <p>More team members coming soon…</p>
     </div>
-   
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <hr class="section-line">
-  <form>
-    <input type="text" placeholder="Full Name" required>
-    <input type="email" placeholder="Email Address" required>
-    <textarea rows="5" placeholder="Your Message" required></textarea>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message</button>
   </form>
 </section>
@@ -152,7 +163,7 @@ footer{text-align:center;padding:2rem;background:#121212;color:#888;font-size:0.
 </footer>
 
 <script>
-// BUTTON SCROLL FIX
+// BUTTON SCROLL
 document.getElementById('explore-btn').addEventListener('click', function(){
   document.getElementById('solutions').scrollIntoView({behavior:'smooth'});
 });
@@ -168,7 +179,7 @@ camera.position.z = 50;
 const renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 
-// particles for tunnel
+// particles
 const particleCount = 300;
 const geometry = new THREE.BufferGeometry();
 const positions = [];
@@ -182,7 +193,6 @@ const material = new THREE.PointsMaterial({color:0x00ffff, size:0.8});
 const particles = new THREE.Points(geometry, material);
 scene.add(particles);
 
-// animate tunnel
 function animate(){
   requestAnimationFrame(animate);
   const positions = particles.geometry.attributes.position.array;
@@ -195,11 +205,32 @@ function animate(){
 }
 animate();
 
-// responsive
 window.addEventListener('resize',()=>{
   camera.aspect=window.innerWidth/window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// CONTACT FORM JS
+document.getElementById("contactForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const data = Object.fromEntries(new FormData(e.target).entries());
+
+  try {
+    const res = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+    alert(result.msg);
+    e.target.reset();
+  } catch(err) {
+    console.error(err);
+    alert("Error sending message. Try again later.");
+  }
 });
 </script>
 
