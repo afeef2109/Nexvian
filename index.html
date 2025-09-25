@@ -218,7 +218,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
   const data = Object.fromEntries(new FormData(e.target).entries());
 
   try {
-    const res = await fetch("http://localhost:5000/contact", {
+    const res = await fetch("https://nexvian-3.onrender.com/contact", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
@@ -236,5 +236,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 </body>
 </html>
+
 
 
