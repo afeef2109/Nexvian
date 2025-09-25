@@ -22,8 +22,8 @@ app.post("/contact", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.ADMIN_EMAIL,       // your Gmail
-        pass: process.env.ADMIN_PASSWORD    // Gmail App Password
+        user: process.env.ADMIN_EMAIL,
+        pass: process.env.ADMIN_PASSWORD
       },
     });
 
@@ -34,16 +34,18 @@ app.post("/contact", async (req, res) => {
       text: message
     });
 
+    console.log(`[SUCCESS] Message sent from ${name} <${email}>`);
     res.status(200).json({ success: true });
-    console.log(`Message sent from ${name} <${email}>`);
   } catch (err) {
-    console.error("Mail error:", err);
-    res.status(500).json({ success: false, error: "Failed to send email" });
+    console.error("[ERROR] Sending mail failed:", err);
+    res.status(500).json({ success: false, error: err.message });
   }
 });
+
 
 // START SERVER
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Backend running on port ${PORT}`);
 });
+
