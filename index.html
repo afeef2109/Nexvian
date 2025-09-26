@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexvian – AI & Defense Innovation</title>
+  <title>Nexvian – The Base of Global AI Infrastructure</title>
 
   <!-- SEO Meta -->
   <meta name="description" content="Nexvian is a global AI & Defense innovation company building scalable infrastructure, intelligent solutions, and next-gen technologies for enterprises and governments.">
   <meta name="keywords" content="Nexvian, AI infrastructure, defense technology, artificial intelligence, cloud computing, data security, DevOps, innovation">
   <meta name="author" content="Nexvian">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -28,7 +25,7 @@
     /* HERO */
     header{position:relative;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;}
     .hero-container{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
-    header h1{font-size:4rem;z-index:1;position:relative;letter-spacing:2px;}
+    header h1{font-size:3.5rem;z-index:1;position:relative;letter-spacing:2px;background:linear-gradient(90deg,#00ffff,#00ff9d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
     header p{font-size:1.4rem;z-index:1;position:relative;color:#bbb;margin:1rem 0 2rem;}
     header button{background:#1f1f1f;border:1px solid #444;padding:0.8rem 1.5rem;margin:0 0.5rem;font-weight:600;border-radius:12px;color:#fff;z-index:1;position:relative;}
     header button:hover{background:#333;border-color:#666;}
@@ -36,16 +33,7 @@
     /* SECTIONS */
     section{padding:5rem 2rem;max-width:1200px;margin:auto;position:relative;z-index:1;}
     h2{text-align:center;margin-bottom:1rem;font-size:2.8rem;letter-spacing:1px;}
-
-    /* SECTION LINES */
-    .section-line {
-      width: 80px;
-      height: 3px;
-      background: #00ffff;
-      border: none;
-      margin: 1rem auto 2rem auto;
-      border-radius: 2px;
-    }
+    .section-line {width: 80px;height: 3px;background: #00ffff;border: none;margin: 1rem auto 2rem auto;border-radius: 2px;}
     section p {margin: 1.5rem auto 3rem auto;text-align:center;}
 
     /* CARDS */
@@ -58,20 +46,7 @@
     /* TEAM */
     .team{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;}
     .member{position:relative;text-align:center;}
-    .member img{
-      display:block;
-      margin:0 auto 1rem auto;
-      width:140px;
-      height:140px;
-      object-fit:cover;
-      border-radius:50%;
-    }
-    .member p:last-child {
-      margin-top: 0.2rem;
-      margin-bottom: 0;
-      color:#888;
-      font-size:rem;
-    }
+    .member img{display:block;margin:0 auto 1rem auto;width:140px;height:140px;object-fit:cover;border-radius:50%;}
 
     /* CONTACT */
     #contact { padding-top:3rem; padding-bottom:3rem; }
@@ -81,10 +56,15 @@
     .contact button{background:#1f1f1f;color:#fff;padding:1rem;border-radius:12px;border:1px solid #444;font-weight:600;margin-top:1rem;}
     .contact button:hover{background:#333;border-color:#666;}
 
+    /* DEMO POPUP */
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:100;justify-content:center;align-items:center;}
+    .modal-content{background:#1a1a1a;padding:2rem;border-radius:15px;max-width:500px;width:90%;text-align:center;}
+    .modal input, .modal textarea{width:100%;margin:0.5rem 0;padding:0.8rem;border-radius:10px;border:none;background:#2a2a2a;color:#fff;}
+    .modal button{margin-top:1rem;}
+
     /* FOOTER */
     footer{text-align:center;padding:2rem;background:#121212;color:#888;font-size:0.9rem;}
 
-    /* RESPONSIVE */
     @media(max-width:768px){
       .cards{flex-direction:column;align-items:center;}
       .team{flex-direction:column;}
@@ -95,13 +75,11 @@
 
 <!-- HERO -->
 <header>
-  <div class="hero-container">
-    <canvas id="hero-bg"></canvas>
-  </div>
-  <h1>Nexvian</h1>
-  <p>Global AI & Defense Innovations for a Smarter Tomorrow</p>
+  <div class="hero-container"><canvas id="hero-bg"></canvas></div>
+  <h1>Nexvian – The Base of Global AI Infrastructure</h1>
+  <p>Empowering AI, Defense, and Next-Gen Technologies</p>
   <div>
-    <button id="explore-btn">Explore Platform</button>
+    <button id="demo-btn">Try Demo</button>
     <button id="invest-btn">Invest in Nexvian</button>
   </div>
 </header>
@@ -110,7 +88,7 @@
 <section id="about">
   <h2>About Nexvian</h2>
   <hr class="section-line">
-  <p>Nexvian is a cutting-edge AI infrastructure company creating scalable solutions for developers, enterprises, and governments worldwide.</p>
+  <p>Nexvian is building the foundation of global AI infrastructure with secure, scalable, and intelligent solutions for enterprises and governments.</p>
   <div class="cards">
     <div class="glass"><h3>50+ AI Modules Built</h3></div>
     <div class="glass"><h3>100k+ Global Users</h3></div>
@@ -130,6 +108,18 @@
   </div>
 </section>
 
+<!-- INVESTOR HIGHLIGHTS -->
+<section id="investors">
+  <h2>Investor Highlights</h2>
+  <hr class="section-line">
+  <div class="cards">
+    <div class="glass"><h3>$300B+</h3><p>Global AI Infrastructure Market</p></div>
+    <div class="glass"><h3>Early Traction</h3><p>100k+ users & enterprise pilots</p></div>
+    <div class="glass"><h3>Defensible Tech</h3><p>AI, Cloud & Defense synergy</p></div>
+  </div>
+  <p><strong>Join us in shaping the future of AI infrastructure.</strong></p>
+</section>
+
 <!-- TEAM -->
 <section id="team">
   <h2>Our Visionaries</h2>
@@ -139,7 +129,6 @@
       <img src="afeef.png" alt="Founder">
       <h3>Afeef</h3>
       <p>Founder & CEO</p>
-      <p>More Team Members Coming Soon…</p>
     </div>
   </div>
 </section>
@@ -148,7 +137,7 @@
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <hr class="section-line">
-  <form id="contactForm">
+  <form action="mailto:afeef2109@gmail.com" method="post" enctype="text/plain">
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email Address" required>
     <input type="text" name="subject" placeholder="Subject" required>
@@ -162,80 +151,74 @@
   &copy; 2025 Nexvian. All Rights Reserved.
 </footer>
 
+<!-- DEMO MODAL -->
+<div id="demo-modal" class="modal">
+  <div class="modal-content">
+    <h2>AI Demo</h2>
+    <input type="text" id="demo-input" placeholder="Type a question...">
+    <button onclick="runDemo()">Run</button>
+    <p id="demo-output" style="margin-top:1rem;color:#0ff;"></p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
 <script>
-// BUTTON SCROLL
-document.getElementById('explore-btn').addEventListener('click', function(){
-  document.getElementById('solutions').scrollIntoView({behavior:'smooth'});
-});
-document.getElementById('invest-btn').addEventListener('click', function(){
-  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+// SCROLL
+document.getElementById('invest-btn').addEventListener('click', ()=> {
+  document.getElementById('investors').scrollIntoView({behavior:'smooth'});
 });
 
-// THREE.JS AI DATA TUNNEL
-const canvas = document.getElementById('hero-bg');
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-camera.position.z = 50;
-const renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true});
-renderer.setSize(window.innerWidth, window.innerHeight);
+// DEMO POPUP
+const modal=document.getElementById('demo-modal');
+document.getElementById('demo-btn').onclick=()=>modal.style.display='flex';
+function closeModal(){modal.style.display='none';}
+function runDemo(){
+  const input=document.getElementById('demo-input').value;
+  let response="Nexvian empowers enterprises with AI infrastructure.";
+  if(input.toLowerCase().includes("defense")) response="Nexvian develops next-gen defense AI systems.";
+  if(input.toLowerCase().includes("cloud")) response="Nexvian offers scalable AI cloud compute.";
+  document.getElementById('demo-output').textContent=response;
+}
 
-// particles
-const particleCount = 300;
-const geometry = new THREE.BufferGeometry();
-const positions = [];
+// THREE.JS BG
+const canvas=document.getElementById('hero-bg');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+camera.position.z=50;
+const renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+const particleCount=300;
+const geometry=new THREE.BufferGeometry();
+const positions=[];
 for(let i=0;i<particleCount;i++){
   positions.push((Math.random()-0.5)*50);
   positions.push((Math.random()-0.5)*50);
   positions.push(Math.random()*-200);
 }
-geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions,3));
-const material = new THREE.PointsMaterial({color:0x00ffff, size:0.8});
-const particles = new THREE.Points(geometry, material);
+geometry.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
+const material=new THREE.PointsMaterial({color:0x00ffff,size:0.8});
+const particles=new THREE.Points(geometry,material);
 scene.add(particles);
-
 function animate(){
   requestAnimationFrame(animate);
-  const positions = particles.geometry.attributes.position.array;
-  for(let i=2;i<positions.length;i+=3){
-    positions[i] += 0.6;
-    if(positions[i]>50) positions[i] = -200;
+  const pos=particles.geometry.attributes.position.array;
+  for(let i=2;i<pos.length;i+=3){
+    pos[i]+=0.6;
+    if(pos[i]>50) pos[i]=-200;
   }
   particles.geometry.attributes.position.needsUpdate=true;
   renderer.render(scene,camera);
 }
 animate();
-
 window.addEventListener('resize',()=>{
   camera.aspect=window.innerWidth/window.innerHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
-
-// CONTACT FORM JS
-document.getElementById("contactForm").addEventListener("submit", async function(e){
-  e.preventDefault();
-
-  const data = Object.fromEntries(new FormData(e.target).entries());
-
-  try {
-    const res = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(data)
-    });
-
-    const result = await res.json();
-    alert(result.msg);
-    e.target.reset();
-  } catch(err) {
-    console.error(err);
-    alert("Error sending message. Try again later.");
-  }
+  renderer.setSize(window.innerWidth,window.innerHeight);
 });
 </script>
-
 </body>
 </html>
+
 
 
 
